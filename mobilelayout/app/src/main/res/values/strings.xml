@@ -1,0 +1,39 @@
+<resources>
+    <!-- App name -->
+    <string name="app_name">Mobile Layout</string>
+    
+    <!-- Native activities titles -->
+    <string name="native_layouts_title">Native Layouts</string>
+    <string name="linear_layout_title">Linear Layout</string>
+    <string name="relative_layout_title">Relative Layout</string>
+    <string name="constraint_layout_title">Constraint Layout</string>
+    
+    <!-- Button labels -->
+    <string name="open_native_version">Open Native Version</string>
+    <string name="linear_layout_example">Linear Layout Example</string>
+    <string name="relative_layout_example">Relative Layout Example</string>
+    <string name="constraint_layout_example">Constraint Layout Example</string>
+    
+    <!-- Common strings -->
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    
+    <!-- Form fields -->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_phone">Phone</string>
+    
+    <!-- Messages -->
+    <string name="msg_required_field">This field is required</string>
+    <string name="msg_invalid_email">Please enter a valid email address</string>
+    <string name="msg_password_too_short">Password must be at least 6 characters</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_linear">Linear</string>
+    <string name="nav_relative">Relative</string>
+    <string name="nav_constraint">Constraint</string>
+</resources>
