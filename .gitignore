@@ -2,7 +2,6 @@
 *.apk
 *.aab
 *.ap_
-*.aab
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -109,16 +108,8 @@ Desktop.ini
 bazel-*
 
 # Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
 *.ipr
-*~
-*.swp
 
 # Gradle files
-.gradle/
-build/
 
 # Local configuration file (sdk path, etc)
-local.properties
