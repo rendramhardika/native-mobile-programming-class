@@ -7,12 +7,14 @@
     <string name="linear_layout_title">Linear Layout</string>
     <string name="relative_layout_title">Relative Layout</string>
     <string name="constraint_layout_title">Constraint Layout</string>
+    <string name="recycler_view_title">RecyclerView Example</string>
+    <string name="timeline_title">Instagram Timeline</string>
     
     <!-- Button labels -->
     <string name="open_native_version">Open Native Version</string>
     <string name="linear_layout_example">Linear Layout Example</string>
     <string name="relative_layout_example">Relative Layout Example</string>
-    <string name="constraint_layout_example">Constraint Layout Example</string>
+    <string name="recycler_view_example">RecyclerView Example</string>
     
     <!-- Common strings -->
     <string name="back">Back</string>

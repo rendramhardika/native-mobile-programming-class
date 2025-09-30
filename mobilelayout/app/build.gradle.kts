@@ -70,6 +70,9 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha13")
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.appcompat)
+    
+    // CircleImageView for Instagram-like timeline
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

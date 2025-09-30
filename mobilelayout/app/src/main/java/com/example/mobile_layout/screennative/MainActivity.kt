@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import com.example.mobile_layout.R
+import com.google.android.material.button.MaterialButton
 
 /**
  * Main activity for the native implementation of layout examples.
@@ -24,6 +25,14 @@ class MainActivity : BaseActivity() {
         setupButton(R.id.btnLinearLayout, LinearLayoutActivity::class.java)
         setupButton(R.id.btnRelativeLayout, RelativeLayoutActivity::class.java)
         setupButton(R.id.btnConstraintLayout, ConstraintLayoutActivity::class.java)
+        setupButton(R.id.btnRecyclerView, RecyclerViewActivity::class.java)
+        setupButton(R.id.btnTimeline, TimelineActivity::class.java)
+        
+        // Set up back button to return to Compose version
+        findViewById<MaterialButton>(R.id.btnBack).setOnClickListener {
+            finish()
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        }
     }
     
     private fun setupButton(buttonId: Int, activityClass: Class<*>) {
@@ -31,5 +40,10 @@ class MainActivity : BaseActivity() {
             startActivity(Intent(this, activityClass))
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
+    }
+    
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 }

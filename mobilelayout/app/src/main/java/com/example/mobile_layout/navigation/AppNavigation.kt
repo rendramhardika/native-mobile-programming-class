@@ -7,7 +7,9 @@ import androidx.navigation.compose.composable
 import com.example.mobile_layout.screens.ConstraintLayoutScreen
 import com.example.mobile_layout.screens.LinearLayoutScreen
 import com.example.mobile_layout.screens.MainScreen
+import com.example.mobile_layout.screens.RecyclerViewScreen
 import com.example.mobile_layout.screens.RelativeLayoutScreen
+import com.example.mobile_layout.screens.TimelineScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
@@ -26,6 +28,12 @@ fun AppNavigation(navController: NavHostController) {
         }
         composable(Screen.ConstraintLayoutScreen.route) {
             ConstraintLayoutScreen(navController = navController)
+        }
+        composable(Screen.RecyclerViewScreen.route) {
+            RecyclerViewScreen(navController = navController)
+        }
+        composable(Screen.TimelineScreen.route) {
+            TimelineScreen(navController = navController)
         }
     }
 }

@@ -2,6 +2,8 @@ package com.example.mobile_layout.screens
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -66,6 +68,34 @@ fun MainScreen(navController: NavController) {
                 Text("Constraint Layout Example")
             }
             
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            Button(
+                onClick = { navController.navigate(Screen.RecyclerViewScreen.route) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.tertiary
+                )
+            ) {
+                Text("RecyclerView Example")
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            Button(
+                onClick = { navController.navigate(Screen.TimelineScreen.route) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.error
+                )
+            ) {
+                Text("Instagram Timeline")
+            }
+            
             Spacer(modifier = Modifier.height(32.dp))
             
             // Divider with text
@@ -102,6 +132,9 @@ fun MainScreen(navController: NavController) {
                         context.startActivity(intent)
                     } catch (e: Exception) {
                         e.printStackTrace()
+                        // Tambahkan log dan toast untuk debugging
+                        Log.e("MainScreen", "Error starting NativeMainActivity: ${e.message}", e)
+                        Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_LONG).show()
                     }
                 },
                 modifier = Modifier

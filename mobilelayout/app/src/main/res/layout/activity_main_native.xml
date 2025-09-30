@@ -74,8 +74,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Constraint Layout"
+                android:layout_marginBottom="16dp"
                 app:backgroundTint="@color/design_default_color_primary"
                 android:textColor="@android:color/white"/>
+                
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRecyclerView"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RecyclerView Example"
+                android:layout_marginBottom="16dp"
+                app:backgroundTint="@color/teal_200"
+                android:textColor="@android:color/black"/>
+                
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTimeline"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instagram Timeline"
+                android:layout_marginBottom="32dp"
+                app:backgroundTint="#E91E63"
+                android:textColor="@android:color/white"/>
+                
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginBottom="32dp"/>
+                
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back to Compose Version"
+                android:textColor="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp"/>
                 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -23,16 +23,25 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Make the content appear under the system bars
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        
-        // Set up edge-to-edge display
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.setDecorFitsSystemWindows(false)
-            window.insetsController?.let {
-                it.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-                it.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        try {
+            // Make the content appear under the system bars
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+            
+            // Set up edge-to-edge display - dengan penanganan error yang lebih baik
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                try {
+                    window.setDecorFitsSystemWindows(false)
+                    window.insetsController?.let {
+                        // Komentar baris berikut untuk mencegah crash
+                        // it.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+                        it.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
     

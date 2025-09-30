@@ -5,4 +5,6 @@ sealed class Screen(val route: String) {
     object LinearLayoutScreen : Screen("linear_layout")
     object RelativeLayoutScreen : Screen("relative_layout")
     object ConstraintLayoutScreen : Screen("constraint_layout")
+    object RecyclerViewScreen : Screen("recycler_view")
+    object TimelineScreen : Screen("timeline")
 }

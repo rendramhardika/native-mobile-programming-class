@@ -4,19 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F3E5F5"
     tools:ignore="MissingClass">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="#9C27B0"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        
+    <TextView
+        android:id="@+id/tvLayoutType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CONSTRAINT LAYOUT EXAMPLE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#7B1FA2"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#EDE7F6"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ScrollView
         android:layout_width="0dp"
@@ -25,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/tvLayoutType">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -37,20 +53,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Product Details"
+                android:text="Premium Headphones"
                 android:textSize="24sp"
                 android:textStyle="bold"
+                android:textColor="#7B1FA2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/ivProduct"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="24dp"
-                android:scaleType="centerCrop"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="32dp"
+                android:scaleType="centerInside"
                 android:src="@drawable/ic_launcher_foreground"
+                android:background="#E1BEE7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvTitle" />
@@ -60,9 +79,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Classic Cotton T-Shirt"
+                android:text="SoundWave Pro X"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="#7B1FA2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivProduct" />
@@ -72,12 +92,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="$129.99"
-                android:textColor="@color/teal_200"
+                android:text="$349.99"
+                android:textColor="#C2185B"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvProductName" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:numStars="5"
+                android:rating="4.5"
+                android:stepSize="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+
+            <TextView
+                android:id="@+id/tvReviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="(2,345 reviews)"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ratingBar" />
 
             <TextView
                 android:id="@+id/tvColorLabel"
@@ -85,133 +129,165 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Color"
+                android:text="Color Options"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="#7B1FA2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+                app:layout_constraintTop_toBottomOf="@id/tvReviews" />
 
-            <RadioGroup
+            <LinearLayout
                 android:id="@+id/colorGroup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvColorLabel">
 
-                <RadioButton
+                <View
                     android:id="@+id/colorBlack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@android:color/black"
-                    android:text="Black" />
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="#000000"
+                    android:layout_margin="8dp" />
 
-                <RadioButton
-                    android:id="@+id/colorBlue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:buttonTint="@android:color/holo_blue_dark"
-                    android:text="Blue" />
+                <View
+                    android:id="@+id/colorWhite"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="#FFFFFF"
+                    android:layout_margin="8dp" />
 
-                <RadioButton
-                    android:id="@+id/colorRed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:buttonTint="@android:color/holo_red_dark"
-                    android:text="Red" />
-            </RadioGroup>
+                <View
+                    android:id="@+id/colorPurple"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="#9C27B0"
+                    android:layout_margin="8dp" />
+
+                <View
+                    android:id="@+id/colorRose"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="#E91E63"
+                    android:layout_margin="8dp" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/tvSizeLabel"
+                android:id="@+id/tvFeaturesLabel"
                 style="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Size"
+                android:text="Key Features"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="#7B1FA2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/colorGroup" />
 
-            <RadioGroup
-                android:id="@+id/sizeGroup"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvSizeLabel">
-
-                <RadioButton
-                    android:id="@+id/sizeS"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="S" />
-
-                <RadioButton
-                    android:id="@+id/sizeM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:checked="true"
-                    android:text="M" />
-
-                <RadioButton
-                    android:id="@+id/sizeL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="L" />
-
-                <RadioButton
-                    android:id="@+id/sizeXL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="XL" />
-            </RadioGroup>
-
             <TextView
-                android:id="@+id/tvDescriptionLabel"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Description"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sizeGroup" />
-
-            <TextView
-                android:id="@+id/tvDescription"
+                android:id="@+id/tvFeatures"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:lineSpacingExtra="4dp"
-                android:text="• 100% premium cotton\n• Regular fit\n• Crew neck\n• Short sleeves\n• Machine washable\n• Imported"
+                android:text="• Active Noise Cancellation\n• 40mm Dynamic Drivers\n• Bluetooth 5.2 Connectivity\n• 30-hour Battery Life\n• Fast Charging (10min = 5hrs)\n• Hi-Res Audio Certified\n• Touch Controls\n• Voice Assistant Support"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDescriptionLabel" />
+                app:layout_constraintTop_toBottomOf="@id/tvFeaturesLabel" />
 
-            <Button
-                android:id="@+id/btnAddToCart"
+            <TextView
+                android:id="@+id/tvQuantityLabel"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Quantity"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#7B1FA2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFeatures" />
+
+            <LinearLayout
+                android:id="@+id/quantitySelector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:background="#E1BEE7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvQuantityLabel">
+
+                <Button
+                    android:id="@+id/btnMinus"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="-"
+                    android:textSize="18sp"
+                    android:backgroundTint="#9C27B0" />
+
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="1"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:background="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnPlus"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="+"
+                    android:textSize="18sp"
+                    android:backgroundTint="#9C27B0" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buttonLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:backgroundTint="@color/white"
-                android:text="Add to Cart"
-                android:textAllCaps="false"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+                app:layout_constraintTop_toBottomOf="@id/quantitySelector">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#757575"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnAddToCart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_weight="1" />
+
+                <Button
+                    android:id="@+id/btnAddToCart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#9C27B0"
+                    android:text="Add to Cart"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnBack"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_weight="2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

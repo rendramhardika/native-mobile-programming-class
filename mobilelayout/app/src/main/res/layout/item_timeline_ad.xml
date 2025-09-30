@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="#FAFAFA"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Ad Header -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/adHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivSponsorLogo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_launcher_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSponsorName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tvSponsored"
+                app:layout_constraintEnd_toStartOf="@id/btnAdMore"
+                app:layout_constraintStart_toEndOf="@id/ivSponsorLogo"
+                app:layout_constraintTop_toTopOf="@id/ivSponsorLogo"
+                tools:text="Sponsor Name" />
+
+            <TextView
+                android:id="@+id/tvSponsored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Sponsored"
+                android:textColor="#777777"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivSponsorLogo"
+                app:layout_constraintStart_toEndOf="@id/ivSponsorLogo"
+                app:layout_constraintTop_toBottomOf="@id/tvSponsorName" />
+
+            <ImageButton
+                android:id="@+id/btnAdMore"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="More options"
+                android:src="@android:drawable/ic_menu_more"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Ad Image -->
+        <ImageView
+            android:id="@+id/ivAdImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:background="#F0F0F0"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/adHeader"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <!-- Ad Content -->
+        <LinearLayout
+            android:id="@+id/adContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/ivAdImage">
+
+            <TextView
+                android:id="@+id/tvAdTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Ad Title Goes Here" />
+
+            <TextView
+                android:id="@+id/tvAdDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                tools:text="This is the ad description that explains what the product or service is about." />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdCta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#4CAF50"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                tools:text="Learn More" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
